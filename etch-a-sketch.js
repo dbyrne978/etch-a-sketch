@@ -1,6 +1,6 @@
 // get number of rows/columns
-let rows = 16;
-let columns = 16;
+let rows = 100;
+let columns = 100;
 let numOfBoxes = rows * columns;
 
 // create boxes
@@ -11,5 +11,7 @@ for (let i = 0; i < numOfBoxes; i++) {
     box.style.flexGrow = "1";
     box.style.flexShrink = "1";
     box.style.flexBasis = `calc(100% / ${columns})`;
+    box.classList.add(`column-${i % columns + 1}`);
+    box.classList.add(`row-${Math.floor(i / columns) + 1}`);
     container.appendChild(box);
 };
