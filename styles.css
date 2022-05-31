@@ -1,1 +1,16 @@
-/* define unchanging size of etch-a-sketch regardless of rows and columns */
+body {
+    background-color: rgb(70, 68, 68);
+}
+
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid black;
+    width: 800px;
+    height: 800px;
+}
+
+.box {
+    border: 1px solid black;
+    box-sizing: border-box
+}
