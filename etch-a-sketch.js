@@ -22,9 +22,29 @@ let addSketchability = () => {
     });
 };
 
-let gridSetup = (gridSize) => {
+let setupGrid = (gridSize) => {
     createBoxes(gridSize);
     addSketchability();
 };
 
-gridSetup(16);
+const newGridButton = document.querySelector("#new-grid");
+newGridButton.addEventListener('click', () => {
+    let n = 0;
+    while(!(Number.isInteger(+n)) || n < 2 || n > 100) {
+        n = prompt("Enter N, where N is an integer and 1<N<101 " +
+                "to create a new NxN grid:");
+        if (n === null) return;
+    };
+    deleteGrid();
+    setupGrid(n);
+});
+
+let deleteGrid = () => {
+    const container = document.querySelector("#container");
+    let boxList = document.querySelectorAll(".box");
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    };
+};
+
+setupGrid(16);
