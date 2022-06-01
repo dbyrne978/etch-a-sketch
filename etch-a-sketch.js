@@ -15,3 +15,10 @@ for (let i = 0; i < numOfBoxes; i++) {
     box.classList.add(`row-${Math.floor(i / columns) + 1}`);
     container.appendChild(box);
 };
+
+let boxList = document.querySelectorAll(".box");
+boxList.forEach((box) => {
+    box.addEventListener("mouseenter", e => {
+        e.target.style.backgroundColor = "black";
+    });
+});
